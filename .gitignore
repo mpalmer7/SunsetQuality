@@ -3,6 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# PyCharm
+*.xml
+.idea/SunsetQuality.iml
+=======
+*.iml
+*.xml
+
+# Archive
+.Archive
+
 # C extensions
 *.so
 
