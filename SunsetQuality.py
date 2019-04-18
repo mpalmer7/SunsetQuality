@@ -97,13 +97,18 @@ os.remove("sunset_dc.png")
 try:
 	os.rename("ET_sunset.png", "Archive/ET_sunset_{}.png".format(str(datetime.now()).split(" ")[0]))
 except FileExistsError:
-	pass
+	os.remove("ET_sunset.png")
+except FileNotFoundError:
+	os.mkdir("Archive")
+	os.rename("ET_sunset.png", "Archive/ET_sunset_{}.png".format(str(datetime.now()).split(" ")[0]))
+
 try:
 	os.rename("sunset_va.png", "Archive/sunset_va_{}.png".format(str(datetime.now()).split(" ")[0]))
 except FileExistsError:
-	pass
-os.remove("ET_sunset.png")
-os.remove("sunset_va.png")
+	os.remove("sunset_va.png")
+except FileNotFoundError:
+	os.mkdir("Archive")
+	os.rename("ET_sunset.png", "Archive/ET_sunset_{}.png".format(str(datetime.now()).split(" ")[0]))
 
 
 print("****************************************")
